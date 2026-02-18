@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shkopi Inteligjent</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    color:#333;
+}
+
+header {
+    background:#0a1f44;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+button {
+    padding:12px 25px;
+    font-size:16px;
+    background:#1abc9c;
+    border:none;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+section {
+    padding:50px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.price-box {
+    background:#0a1f44;
+    color:white;
+    padding:30px;
+    text-align:center;
+    border-radius:10px;
+}
+
+footer {
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+input, textarea {
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Shkopi Inteligjent për të Verbërit</h1>
+    <p>Siguri. Pavarësi. Teknologji moderne.</p>
+    <button onclick="document.getElementById('kontakt').scrollIntoView()">Na Kontakto</button>
+</header>
+
+<section>
+    <h2>Si Funksionon?</h2>
+    <p>Shkopi inteligjent përdor sensorë ultrasonik për të zbuluar pengesat përpara përdoruesit.</p>
+    <p>Kur detekton një objekt, ai jep sinjal zanor dhe vibrim për paralajmërim.</p>
+    <p>Bateria është e rikarikueshme dhe zgjat deri në 10 orë përdorim.</p>
+</section>
+
+<section>
+    <h2>Karakteristikat Kryesore</h2>
+    <ul>
+        <li>Sensor për zbulim pengesash</li>
+        <li>Sinjal zanor dhe vibrim</li>
+        <li>Bateri e rikarikueshme USB</li>
+        <li>Dizajn i lehtë dhe rezistent ndaj ujit</li>
+    </ul>
+</section>
+
+<section class="price-box">
+    <h2>Çmimi</h2>
+    <h1>149€</h1>
+    <p>Dërgesë falas brenda vendit</p>
+</section>
+
+<section id="kontakt">
+    <h2>Na Kontakto</h2>
+
+    <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+
+        <input type="text" name="name" placeholder="Emri juaj" required>
+        <input type="email" name="email" placeholder="Email juaj" required>
+        <textarea name="message" placeholder="Mesazhi juaj" rows="5" required></textarea>
+
+        <button type="submit">Dërgo Mesazhin</button>
+    </form>
+
+    <p>Email: info@smartcanealbania.com</p>
+    <p>Tel: +355 682673885</p>
+</section>
+
+<footer>
+    © 2026 Shkopi Inteligjent | Të gjitha të drejtat e rezervuara
+</footer>
+
+</body>
+</html>
