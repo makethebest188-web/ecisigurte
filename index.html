@@ -3,147 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Cane Albania</title>
+    <title>Smart Cane Albania | Shkopi Inteligjent</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0d1117; color: #ffffff; line-height: 1.6; scroll-behavior: smooth; }
+        /* Stilimi i Përgjithshëm */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
 
+        /* Header */
         header {
-            position: relative;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            text-align: center;
-            padding: 80px 20px;
-            overflow: hidden;
-        }
-        header h1 {
-            font-size: 3em;
-            color: #00d1ff;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        header p {
-            font-size: 1.4em;
-            color: #cce7ff;
-            margin-bottom: 30px;
-        }
-        header .btn {
-            background-color: #00d1ff;
-            color: #0d1117;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 209, 255, 0.3);
-        }
-        header .btn:hover { background-color: #0090cc; transform: translateY(-3px); }
-
-        .shape { position: absolute; border-radius: 50%; opacity: 0.15; z-index: 0; }
-        .shape1 { width: 250px; height: 250px; background-color: #00d1ff; top: -50px; left: -50px; }
-        .shape2 { width: 400px; height: 400px; background-color: #ffffff; bottom: -150px; right: -100px; }
-
-        section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: 40px auto;
-            background-color: #161b22;
-            border-radius: 20px;
-            border: 1px solid #30363d;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        
-        .grid-container {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(15, 23, 42, 0.9)), url('shkopi.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 40px;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 { font-size: 3rem; color: #38bdf8; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        header p { font-size: 1.2rem; max-width: 600px; margin-bottom: 25px; }
+
+        /* Containeri i Kartave */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        .text-content { flex: 1; min-width: 300px; }
-        .image-content { flex: 1; min-width: 300px; text-align: center; }
-
-        .product-img {
-            width: 100%;
-            max-width: 500px;
+        /* Stilimi i Kutizave (Cards) */
+        .card {
+            background: #1e293b;
+            padding: 30px;
             border-radius: 15px;
-            border: 2px solid #00d1ff;
-            box-shadow: 0 0 20px rgba(0, 209, 255, 0.2);
-            transition: 0.4s;
-        }
-        .product-img:hover { transform: scale(1.02); }
-
-        section h2 { color: #00d1ff; margin-bottom: 25px; font-size: 2.2em; border-left: 5px solid #00d1ff; padding-left: 15px; }
-        ul { list-style: none; }
-        ul li { margin-bottom: 15px; padding-left: 30px; position: relative; }
-        ul li::before { content: "✓"; position: absolute; left: 0; color: #00d1ff; font-weight: bold; }
-
-        #cmimi { text-align: center; background: linear-gradient(135deg, #161b22, #1e3c72); }
-        .price-tag { font-size: 3.5em; color: #00d1ff; font-weight: bold; }
-
-        #contact { text-align: center; }
-        .contact-info { font-size: 1.2em; margin: 10px 0; color: #cce7ff; }
-        .btn-contact {
-            display: inline-block;
-            background-color: #00d1ff;
-            color: #0d1117;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-top: 20px;
+            border: 1px solid #334155;
             transition: 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover { transform: translateY(-10px); border-color: #38bdf8; }
+        .card h2 { color: #38bdf8; margin-bottom: 15px; font-size: 1.5rem; display: flex; align-items: center; }
+        .card p { color: #94a3b8; font-size: 1rem; }
+        .card ul { margin-top: 10px; list-style: none; }
+        .card ul li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        .card ul li::before { content: "→"; position: absolute; left: 0; color: #38bdf8; }
+
+        /* Seksioni i Kontaktit */
+        .contact-box {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+            color: white;
+        }
+        .contact-box h2 { color: white; justify-content: center; }
+        .contact-box p { color: #e0f2fe; }
+
+        /* Butonat e Veprimit */
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp { background-color: #25D366; color: white; }
+        .btn-whatsapp:hover { background-color: #128C7E; }
+
+        .btn-sms { background-color: #ffffff; color: #2563eb; }
+        .btn-sms:hover { background-color: #f1f5f9; }
+
+        /* Fotoja kryesore në mes */
+        .main-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .container { margin-top: 20px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="position: relative; z-index: 1;">
-        <h1>Lëviz me Siguri dhe Besim</h1>
-        <p>Teknologjia që ndriçon rrugën tuaj</p>
-        <a href="#contact" class="btn">POROSIT TANI</a>
-    </div>
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
+    <h1>Smart Cane Albania</h1>
+    <p>Inovacioni që ndryshon jetën e personave me shikim të kufizuar. Siguri, pavarësi dhe teknologji në një shkop të vetëm.</p>
 </header>
 
-<section id="pershkrimi">
-    <div class="grid-container">
-        <div class="text-content">
-            <h2>Përshkrimi i Produktit</h2>
-            <p>Shkopi inteligjent është krijuar për të ofruar pavarësi maksimale. Përmes sensorëve ultrasonikë, ai identifikon pengesat në distancë dhe njofton përdoruesin në kohë reale.</p>
-            <br>
-            <ul>
-                <li>Dizajn ergonomik dhe peshë e lehtë</li>
-                <li>Sensorë për detektim deri në 2 metra</li>
-                <li>Bateri që zgjat dhe karikohet shpejt</li>
-                <li>Sinjalizim zanor dhe me dridhje (vibrim)</li>
-            </ul>
-        </div>
-        <div class="image-content">
-            <img src="shkopi.jpg" alt="Shkopi Inteligjent" class="product-img">
-        </div>
+<img src="shkopi.jpg" alt="Smart Cane Design" class="main-image">
+
+<div class="container">
+    
+    <div class="card">
+        <h2>🔍 Përshkrimi</h2>
+        <p>Shkopi Inteligjent nuk është thjesht një mjet mbështetës, por një asistent elektronik. Ai përdor valë ultrasonike për të "parë" ambientin rreth jush, duke ofruar një mbrojtje 360 gradë.</p>
     </div>
-</section>
 
-<section id="cmimi">
-    <h2>Investimi për Pavarësinë Tuaj</h2>
-    <div class="price-tag">50 €</div>
-    <p>Cilësi maksimale me çmimin më konkurrues në treg.</p>
-</section>
+    <div class="card">
+        <h2>⚙️ Si Funksionon?</h2>
+        <p>Pajisja dërgon sinjale në ajër që përplasen me pengesat. Kur një objekt detektohet:</p>
+        <ul>
+            <li>Dridhet doreza e shkopit.</li>
+            <li>Lëshon një zë paralajmërues (Bip).</li>
+            <li>Shton intensitetin sa më afër pengesës të jeni.</li>
+        </ul>
+    </div>
 
-<section id="contact">
-    <h2>Na Kontaktoni</h2>
-    <p class="contact-info">📍 Tiranë, Shqipëri</p>
-    <p class="contact-info">📧 Email: ecisigurt@gmail.com</p>
-    <p class="contact-info">📞 Telefon: 068 26 73 885</p>
-    <a href="mailto:ecisigurt@gmail.com" class="btn-contact">DËRGONI EMAIL</a>
-</section>
+    <div class="card">
+        <h2>🚶 Përdorimi</h2>
+        <p>I dizajnuar për çdo mjedis:</p>
+        <ul>
+            <li>Në rrugë qyteti me trafik.</li>
+            <li>Në ambiente të mbyllura apo shkolla.</li>
+            <li>Gjatë natës falë dritave LED njoftuese për makinat.</li>
+        </ul>
+    </div>
 
-<footer style="text-align: center; padding: 20px; color: #4b5563; font-size: 0.9em;">
-    &copy; 2024 Smart Cane Albania - Të gjitha të drejtat e rezervuara.
+    <div class="card">
+        <h2>💰 Çmimi & Oferta</h2>
+        <p>Përfitoni teknologjinë më të fundit me një çmim social:</p>
+        <h3 style="font-size: 2rem; margin: 10px 0;">50 €</h3>
+        <p>*Garanci 1 vjeçare dhe asistencë teknike e përfshirë.</p>
+    </div>
+
+    <div class="card contact-box" id="contact">
+        <h2>📩 Na Kontaktoni Direkt</h2>
+        <p>Keni pyetje apo dëshironi të bëni një porosi? Na shkruani tani:</p>
+        
+        <div class="btn-group">
+            <a href="https://wa.me/355682673885?text=Përshëndetje! Jag jam i interesuar për Shkopin Inteligjent." class="btn btn-whatsapp">
+                💬 WhatsApp
+            </a>
+
+            <a href="sms:+355682673885?body=Përshëndetje! Dua të porosis shkopin inteligjent." class="btn btn-sms">
+                ✉️ Dërgo SMS
+            </a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.9rem;">📍 Lokacioni: Tiranë, Shqipëri</p>
+    </div>
+
+</div>
+
+<footer style="text-align: center; padding: 30px; color: #64748b;">
+    &copy; 2024 Smart Cane Albania. Ndërtuar për të ndihmuar.
 </footer>
 
 </body>
 </html>
+    
