@@ -1,83 +1,142 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shkopi Inteligjent</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cane Albania</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #0d1117; color: #ffffff; line-height: 1.6; }
 
-<style>
-body {
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#f4f6f9;
-    color:#333;
-}
+        header {
+            position: relative;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            text-align: center;
+            padding: 60px 20px;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 2.8em;
+            color: #00d1ff;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #cce7ff;
+            margin-bottom: 20px;
+        }
+        header .btn {
+            background-color: #00d1ff;
+            color: #0d1117;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        header .btn:hover { background-color: #0090cc; }
 
-header {
-    background:#0a1f44;
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+        .shape1 { width: 200px; height: 200px; background-color: #00d1ff; top: -50px; left: -50px; }
+        .shape2 { width: 300px; height: 300px; background-color: #000000; bottom: -150px; right: -100px; }
 
-button {
-    padding:12px 25px;
-    font-size:16px;
-    background:#1abc9c;
-    border:none;
-    color:white;
-    border-radius:5px;
-    cursor:pointer;
-}
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #111827;
+            border-radius: 15px;
+            position: relative;
+        }
+        section h2 { color: #00d1ff; margin-bottom: 20px; font-size: 2em; }
+        section p, section ul { margin-bottom: 20px; }
+        section ul li { margin-bottom: 10px; }
 
-section {
-    padding:50px 20px;
-    max-width:900px;
-    margin:auto;
-}
+        .contact-info { font-weight: bold; font-size: 1.1em; }
+        .btn-contact {
+            display: inline-block;
+            background-color: #00d1ff;
+            color: #0d1117;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-contact:hover { background-color: #0090cc; }
 
-.price-box {
-    background:#0a1f44;
-    color:white;
-    padding:30px;
-    text-align:center;
-    border-radius:10px;
-}
+        /* Placeholder për fotot pa përdorur imazhe */
+        .photo-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: #1a202c;
+            border: 2px dashed #00d1ff;
+            border-radius: 12px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00d1ff;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
 
-footer {
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-input, textarea {
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-}
-</style>
+<header>
+    <h1>Lëviz me Siguri dhe Besim</h1>
+    <p>Shkopi Inteligjent për të Verbërit</p>
+    <a href="#contact" class="btn">Porosit Tani</a>
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+</header>
 
-
-<section id="kontakt">
-    <h2>Na Kontakto</h2>
-
-    <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-
-        <input type="text" name="name" placeholder="Emri juaj" required>
-        <input type="email" name="email" placeholder="Email juaj" required>
-        <textarea name="message" placeholder="Mesazhi juaj" rows="5" required></textarea>
-
-        <button type="submit">Dërgo Mesazhin</button>
-    </form>
-
-    <p>Email: info@smartcanealbania.com</p>
-    <p>Tel: +355 682673885</p>
+<section id="pershkrimi">
+    <h2>Përshkrimi i Produktit</h2>
+    <p>Shkopi inteligjent është dizajnuar për t’u dhënë personave me shikim të kufizuar liri dhe siguri gjatë ecjes. Falë sensorëve modernë, ai ndihmon të zbulohen pengesat përpara dhe të paralajmërohet përdoruesi me sinjal zanor.</p>
+    <ul>
+        <li>I lehtë dhe praktik për përdorim</li>
+        <li>Funksionon me sensorë elektronikë të avancuar</li>
+        <li>I përshtatshëm për rrugë, shkollë dhe ambiente të ndryshme</li>
+    </ul>
+    <div class="photo-placeholder">[Vend për Foto 1]</div>
 </section>
 
-<footer>
-    © 2026 Shkopi Inteligjent | Të gjitha të drejtat e rezervuara
-</footer>
+<section id="funksionon">
+    <h2>Si Funksionon</h2>
+    <p>Shkopi përdor sensorë të integruar për të zbuluar pengesat. Kur pengesa është pranë, shkopi lëshon sinjal zanor paralajmërues dhe ndihmon përdoruesin të shmangë pengesat. Funksionon me bateri dhe është i lehtë për t’u përdorur.</p>
+    <div class="photo-placeholder">[Vend për Foto 2]</div>
+</section>
+
+<section id="perfitimet">
+    <h2>Përfitimet</h2>
+    <ul>
+        <li>Siguri më e madhe gjatë ecjes</li>
+        <li>Paralajmërim i hershëm për pengesat</li>
+        <li>Lehtësi përdorimi dhe prakticitet</li>
+        <li>Teknologji moderne me sensorë të avancuar</li>
+    </ul>
+    <div class="photo-placeholder">[Vend për Foto 3]</div>
+</section>
+
+<section id="cmimi">
+    <h2>Çmimi</h2>
+    <p><strong>50 €</strong></p>
+</section>
+
+<section id="contact">
+    <h2>Kontakti</h2>
+    <p class="contact-info">Email: ecisigurt@gmail.com</p>
+    <p class="contact-info">Telefon: 0682673885</p>
+    <a href="mailto:ecisigurt@gmail.com" class="btn-contact">Na Kontaktoni</a>
+</section>
 
 </body>
 </html>
