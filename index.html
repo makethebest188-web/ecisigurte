@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shkop Inteligjent për personat me mungesë shikimi</title>
     <style>
-        /* Sfondi me foto që qëndron fiks */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        /* Sfondi me imazh fiks dhe efekt errësimi për lexueshmëri */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
         body { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('shkopi2.jpg');
+            background: linear-gradient(rgba(0, 10, 20, 0.8), rgba(0, 20, 10, 0.8)), url('shkopi2.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            color: #ffffff;
+            color: #f1f5f9;
             line-height: 1.8;
         }
 
         header {
             text-align: center;
-            padding: 100px 20px;
-            background: rgba(0, 0, 0, 0.5);
+            padding: 120px 20px;
+            background: rgba(0, 0, 0, 0.3);
         }
 
         header h1 { 
@@ -29,34 +29,37 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
         }
 
         header p { 
-            color: #bdc3c7; 
+            color: #38bdf8; 
             font-size: 1.3rem;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+            font-weight: 400;
         }
 
         .container { 
             max-width: 900px; 
-            margin: 50px auto; 
+            margin: -50px auto 100px; 
             padding: 20px; 
         }
 
-        /* Stilimi i seksioneve interaktive */
+        /* Seksionet interaktive (Accordion) */
         details {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.95);
             margin-bottom: 20px;
             border-radius: 15px;
-            border: 1px solid #2ecc71;
-            backdrop-filter: blur(5px);
+            border: 1px solid rgba(46, 204, 113, 0.4);
+            backdrop-filter: blur(8px);
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
         details[open] {
             border-color: #3498db;
-            background: rgba(22, 33, 62, 0.95);
+            transform: translateY(-5px);
         }
 
         summary {
@@ -69,6 +72,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            outline: none;
         }
 
         summary:hover { color: #3498db; }
@@ -82,10 +86,10 @@
         details[open] summary::after { transform: rotate(180deg); }
 
         .content {
-            padding: 0 25px 25px 25px;
-            color: #d1d5db;
+            padding: 0 25px 30px 25px;
+            color: #cbd5e1;
             font-size: 1.1rem;
-            border-top: 1px solid rgba(46, 204, 113, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
         }
 
@@ -98,8 +102,8 @@
         }
         
         .btn {
-            padding: 15px 25px;
-            border-radius: 10px;
+            padding: 18px 30px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
             flex: 1;
@@ -108,219 +112,33 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .btn-wa { background: #25d366; color: white; }
-        .btn-mail { background: #e74c3c; color: white; }
-        .btn:hover { opacity: 0.8; transform: translateY(-3px); }
-
-        .price-text {
-            font-size: 3rem;
-            color: #2ecc71;
-            text-align: center;
-            font-weight: bold;
-            margin: 20px 0;
-            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px;
-            background: rgba(0,0,0,0.8);
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Shkop Inteligjent për personat me mungesë shikimi</h1>
-    <p>Një hap drejt pavarësisë totale. Teknologji e avancuar që ofron siguri dhe liri lëvizjeje në çdo mjedis.</p>
-</header>
-
-<div class="container">
-
-    <details>
-        <summary>🔍 Përshkrimi i Detajuar i Pajisjes</summary>
-        <div class="content">
-            <p>Ky projekt është fryt i një pune intensive për të integruar teknologjinë moderne në jetën e përditshme të atyre që kanë nevojë. Shkopi nuk është thjesht një mjet fizik, por një sistem i tërë monitorimi.</p>
-            <br>
-            <p>Pajisja është e ndërtuar me materiale të lehta por tejet rezistente si fibra e karbonit dhe alumini aeronautik, duke siguruar që përdoruesi të mos lodhet gjatë ecjeve të gjata. Dizajni është ergonomik, duke u përshtatur me dorën e çdo personi.</p>
-        </div>
-    </details>
-
-    <details>
-        <summary>⚙️ Specifikimet Teknike dhe Funksionimi</summary>
-        <div class="content">
-            <ul>
-                <li><strong>Sistemi Ultrasonik:</strong> Sensorët tanë lëshojnë valë që detektojnë objekte deri në 2 metra distancë, përfshirë pengesat në lartësinë e kokës që shkopat e zakonshëm nuk i gjejnë.</li>
-                <li><strong>Haptic Feedback:</strong> Doreza dridhet me frekuenca të ndryshme në varësi të distancës nga pengesa.</li>
-                <li><strong>Ndriçimi LED:</strong> Gjatë natës, shkopi aktivizon drita sinjalizuese për të rritur dukshmërinë e përdoruesit ndaj makinave.</li>
-                <li><strong>Bateria:</strong> Karikohet me USB dhe zgjat deri në 48 orë përdorim aktiv.</li>
-            </ul>
-        </div>
-    </details>
-
-    <details>
-        <summary>💰 Informacioni mbi Çmimin</summary>
-        <div class="content">
-            <p>Ne besojmë se teknologjia ndihmëse duhet të jetë e aksesueshme për të gjithë. Prandaj kemi arritur të ulim koston në:</p>
-            <div class="price-text">50 €</div>
-            <p style="text-align:center">Në paketim përfshihet: Shkopi, kablli i karikimit, manuali në alfabetin Braille (opsional) dhe garancia 12 mujore.</p>
-        </div>
-    </details>
-
-    <details>
-        <summary>📩 Porositni ose Na Kontaktoni</summary>
-        <div class="content">
-            <p>Për të bërë një porosi ose për të kërkuar informacion shtesë, klikoni butonin e emailit për të na dërguar një mesazh direkt ose na shkruani në WhatsApp.</p>
-            <div class="btn-group">
-                <a href="mailto:ecisigurt@gmail.com?subject=Interesim per Shkopin Inteligjent&body=Pershendetje! Deshiroj te marr me shume informacion rreth shkopit." class="btn btn-mail">📧 Dërgo Email</a>
-                
-                <a href="https://wa.me/355682673885" class="btn btn-wa">💬 WhatsApp</a>
-            </div>
-            <p style="margin-top: 20px; text-align: center;">Lokacioni ynë: Tiranë, Shqipëri<br>Telefon: +355 68 26 73 885</p>
-        </div>
-    </details>
-
-</div>
-
-<footer>
-    &copy; 2024 Shkop Inteligjent Albania - Teknologji në Shërbim të Njeriut
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="sq">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shkop Inteligjent për personat me mungesë shikimi</title>
-    <style>
-        /* Sfondi me foto që qëndron fiks */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
-        
-        body { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('shkopi2.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: #ffffff;
-            line-height: 1.8;
-        }
-
-        header {
-            text-align: center;
-            padding: 100px 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        header h1 { 
-            color: #2ecc71; 
-            font-size: 3rem; 
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p { 
-            color: #bdc3c7; 
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .container { 
-            max-width: 900px; 
-            margin: 50px auto; 
-            padding: 20px; 
-        }
-
-        /* Stilimi i seksioneve interaktive */
-        details {
-            background: rgba(15, 23, 42, 0.85);
-            margin-bottom: 20px;
-            border-radius: 15px;
-            border: 1px solid #2ecc71;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-        }
-
-        details[open] {
-            border-color: #3498db;
-            background: rgba(22, 33, 62, 0.95);
-        }
-
-        summary {
-            padding: 25px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #2ecc71;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        summary:hover { color: #3498db; }
-
-        summary::after {
-            content: "▼";
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        details[open] summary::after { transform: rotate(180deg); }
-
-        .content {
-            padding: 0 25px 25px 25px;
-            color: #d1d5db;
             font-size: 1.1rem;
-            border-top: 1px solid rgba(46, 204, 113, 0.3);
-            padding-top: 20px;
         }
 
-        /* Butonat e Kontaktit */
-        .btn-group { 
-            display: flex; 
-            gap: 15px; 
-            margin-top: 30px; 
-            flex-wrap: wrap; 
-        }
-        
-        .btn {
-            padding: 15px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            flex: 1;
-            text-align: center;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn-wa { background: #25d366; color: white; }
         .btn-mail { background: #e74c3c; color: white; }
-        .btn:hover { opacity: 0.8; transform: translateY(-3px); }
+        .btn-wa { background: #2ecc71; color: white; }
+        
+        .btn:hover { 
+            filter: brightness(1.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
 
         .price-text {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #2ecc71;
             text-align: center;
-            font-weight: bold;
+            font-weight: 800;
             margin: 20px 0;
-            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+            text-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
         }
 
         footer {
             text-align: center;
-            padding: 50px;
-            background: rgba(0,0,0,0.8);
+            padding: 60px 20px;
+            background: rgba(0,0,0,0.9);
             margin-top: 50px;
+            border-top: 1px solid #1e293b;
         }
     </style>
 </head>
@@ -328,60 +146,69 @@
 
 <header>
     <h1>Shkop Inteligjent për personat me mungesë shikimi</h1>
-    <p>Një hap drejt pavarësisë totale. Teknologji e avancuar që ofron siguri dhe liri lëvizjeje në çdo mjedis.</p>
+    <p>Një revolucion në lëvizshmëri. Pajisja që kombinon sensorët ultrasonikë me dizajnin ergonomik për të ofruar siguri maksimale dhe pavarësi në çdo hap.</p>
 </header>
 
 <div class="container">
 
     <details>
-        <summary>🔍 Përshkrimi i Detajuar i Pajisjes</summary>
+        <summary>🔍 Përshkrimi i Detajuar i Teknologjisë</summary>
         <div class="content">
-            <p>Ky projekt është fryt i një pune intensive për të integruar teknologjinë moderne në jetën e përditshme të atyre që kanë nevojë. Shkopi nuk është thjesht një mjet fizik, por një sistem i tërë monitorimi.</p>
+            <p>Shkopi ynë inteligjent është projektuar për të tejkaluar limitet e shkopit tradicional. Duke përdorur teknologjinë e jehonës (ultrazërit), ai krijon një zonë sigurie rreth përdoruesit, duke diktuar jo vetëm objektet në tokë, por edhe pengesat e larta që mund të rrezikojnë pjesën e sipërme të trupit.</p>
             <br>
-            <p>Pajisja është e ndërtuar me materiale të lehta por tejet rezistente si fibra e karbonit dhe alumini aeronautik, duke siguruar që përdoruesi të mos lodhet gjatë ecjeve të gjata. Dizajni është ergonomik, duke u përshtatur me dorën e çdo personi.</p>
+            <p>Materiali i përdorur është një përzierje e fibrave të karbonit dhe polimereve rezistente, duke e bërë pajisjen tejet të lehtë për t'u mbajtur, por mjaftueshëm të fortë për t'i bërë ballë përdorimit të përditshëm në rrugët e qytetit.</p>
         </div>
     </details>
 
     <details>
-        <summary>⚙️ Specifikimet Teknike dhe Funksionimi</summary>
+        <summary>⚙️ Funksionimi dhe Specifikimet</summary>
         <div class="content">
-            <ul>
-                <li><strong>Sistemi Ultrasonik:</strong> Sensorët tanë lëshojnë valë që detektojnë objekte deri në 2 metra distancë, përfshirë pengesat në lartësinë e kokës që shkopat e zakonshëm nuk i gjejnë.</li>
-                <li><strong>Haptic Feedback:</strong> Doreza dridhet me frekuenca të ndryshme në varësi të distancës nga pengesa.</li>
-                <li><strong>Ndriçimi LED:</strong> Gjatë natës, shkopi aktivizon drita sinjalizuese për të rritur dukshmërinë e përdoruesit ndaj makinave.</li>
-                <li><strong>Bateria:</strong> Karikohet me USB dhe zgjat deri në 48 orë përdorim aktiv.</li>
+            <p>Pajisja punon me një sistem inteligjent njoftimi:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Sistemi i Vibrimit:</strong> Doreza lëshon dridhje të ndryshme në varësi të afërsisë me objektin.</li>
+                <li><strong>Detektimi Inteligjent:</strong> Sensorët kapin pengesa deri në 2 metra distancë, duke ju dhënë kohë të mjaftueshme për t'u manovruar.</li>
+                <li><strong>Dritat e Sigurisë:</strong> Sensorë të integruar aktivizojnë drita LED automatike gjatë natës për t'u bërë të dukshëm për makinat.</li>
+                <li><strong>Bateria:</strong> Karikohet brenda 2 orësh dhe zgjat deri në 3 ditë me përdorim normal.</li>
             </ul>
         </div>
     </details>
 
     <details>
-        <summary>💰 Informacioni mbi Çmimin</summary>
+        <summary>💰 Çmimi dhe Garancia</summary>
         <div class="content">
-            <p>Ne besojmë se teknologjia ndihmëse duhet të jetë e aksesueshme për të gjithë. Prandaj kemi arritur të ulim koston në:</p>
+            <p>Ne jemi të përkushtuar që ky mjet të jetë i aksesueshëm për këdo. Çmimi social për tregun tonë është:</p>
             <div class="price-text">50 €</div>
-            <p style="text-align:center">Në paketim përfshihet: Shkopi, kablli i karikimit, manuali në alfabetin Braille (opsional) dhe garancia 12 mujore.</p>
+            <p style="text-align:center">Në këtë çmim përfshihet pajisja, garancia 1-vjeçare dhe asistenca për përdorimin e parë.</p>
         </div>
     </details>
 
     <details>
         <summary>📩 Porositni ose Na Kontaktoni</summary>
         <div class="content">
-            <p>Për të bërë një porosi ose për të kërkuar informacion shtesë, klikoni butonin e emailit për të na dërguar një mesazh direkt ose na shkruani në WhatsApp.</p>
+            <p>Për të bërë një porosi apo për të kërkuar më shumë detaje teknike, na kontaktoni direkt përmes opsioneve më poshtë:</p>
+            
             <div class="btn-group">
-                <a href="mailto:ecisigurt@gmail.com?subject=Interesim per Shkopin Inteligjent&body=Pershendetje! Deshiroj te marr me shume informacion rreth shkopit." class="btn btn-mail">📧 Dërgo Email</a>
+                <a href="mailto:ecisigurt@gmail.com?subject=Interesim per Shkopin Inteligjent&body=Pershendetje! Dua te marr me shume informacion per produktin tuaj." class="btn btn-mail">
+                    📧 Dërgo Email
+                </a>
                 
-                <a href="https://wa.me/355682673885" class="btn btn-wa">💬 WhatsApp</a>
+                <a href="https://wa.me/355682673885" class="btn btn-wa">
+                    💬 WhatsApp
+                </a>
             </div>
-            <p style="margin-top: 20px; text-align: center;">Lokacioni ynë: Tiranë, Shqipëri<br>Telefon: +355 68 26 73 885</p>
+            
+            <p style="margin-top: 25px; text-align: center; font-size: 0.9rem; color: #64748b;">
+                📍 Adresa: Tiranë, Shqipëri | 📧 Email: ecisigurt@gmail.com
+            </p>
         </div>
     </details>
 
 </div>
 
 <footer>
-    &copy; 2026 Shkop Inteligjent Albania - Teknologji në Shërbim të Njeriut
+    <p>&copy; 2024 Shkop Inteligjent Albania</p>
+    <p style="color: #475569; font-size: 0.8rem; margin-top: 10px;">Teknologji që dhuron liri lëvizjeje për personat me mungesë shikimi.</p>
 </footer>
 
 </body>
 </html>
-    
