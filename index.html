@@ -1,164 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="sq">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shkopi Inteligjent</title>
+    <title>Smart Cane Albania | Ledjan Bitri</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Times New Roman', Times, serif; font-weight: bold; }
+        
+        body { 
+            background: #00050a;
+            color: #ffffff; line-height: 1.6;
         }
 
-        header {
-            background: #111;
-            color: white;
-            padding: 20px;
-            text-align: center;
+        /* Navigimi me tre viza */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 30px; background: #000000; border-bottom: 2px solid #003366;
+            position: sticky; top: 0; z-index: 1000;
         }
 
-        header h1 {
-            margin: 0;
+        .menu-icon { cursor: pointer; display: flex; flex-direction: column; gap: 5px; }
+        .menu-icon div { width: 30px; height: 4px; background-color: white; }
+
+        header { text-align: center; padding: 50px 20px; background: rgba(0,0,0,0.8); }
+        header h1 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 10px; }
+        header p { color: #3498db; font-size: 1.4rem; }
+
+        .main-photo {
+            width: 100%; max-width: 850px; display: block; margin: 20px auto;
+            border: 2px solid #ffffff; border-radius: 10px;
         }
 
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background: linear-gradient(to right, #0066ff, #00ccff);
-            color: white;
-        }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 
-        .hero h2 {
-            font-size: 40px;
+        /* Login Section */
+        .login-section {
+            max-width: 400px; margin: 40px auto; padding: 30px;
+            background: #001122; border: 2px solid #3498db; border-radius: 10px;
         }
+        .login-section input {
+            width: 100%; padding: 12px; margin-bottom: 10px;
+            background: #000; border: 1px solid #fff; color: white;
+        }
+        .btn-login { width: 100%; padding: 12px; background: #3498db; color: white; border: none; cursor: pointer; }
 
-        .container {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+        /* Accordion */
+        details { background: #000c1a; margin-bottom: 15px; border: 1px solid #ffffff; }
+        summary { padding: 20px; font-size: 1.4rem; cursor: pointer; display: flex; justify-content: space-between; }
+        .content { padding: 25px; font-size: 1.2rem; border-top: 1px solid #3498db; }
 
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+        .price-text { font-size: 4rem; text-align: center; margin: 20px 0; color: #ffffff; }
 
-        .card {
-            background: white;
-            padding: 20px;
-            width: 280px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+        .btn-group { display: flex; gap: 15px; margin-top: 20px; }
+        .btn { padding: 18px; text-decoration: none; flex: 1; text-align: center; border: 2px solid #ffffff; font-size: 1.2rem; }
+        .btn-mail { background: #002244; color: #fff; }
+        .btn-wa { background: #fff; color: #000; }
 
-        .price {
-            text-align: center;
-            font-size: 30px;
-            color: #0066ff;
-            margin: 20px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #0066ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #0044aa;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
-            margin: auto;
-        }
-
-        input, textarea {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-
-        @media(max-width:768px){
-            .features{
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+        footer { text-align: center; padding: 60px; background: #000; border-top: 3px solid #003366; }
+        .footer-name { color: #3498db; font-size: 2.2rem; letter-spacing: 4px; }
     </style>
 </head>
 <body>
 
+<nav class="navbar">
+    <div class="menu-icon"><div></div><div></div><div></div></div>
+    <div style="font-size: 1.2rem; color: #3498db;">ANTARÃ‹SIMI</div>
+</nav>
+
 <header>
-    <h1>Shkopi Inteligjent</h1>
-    <p>Teknologji për një jetë më të sigurt</p>
+    <h1>Shkop Inteligjent</h1>
+    <p>PÃ«r personat me mungesÃ« shikimi</p>
 </header>
 
-<section class="hero">
-    <h2>Shkop Inteligjent me Sensorë</h2>
-    <p>Zbulon pengesat dhe paralajmëron me tingull</p>
-    <a href="#porosit" class="btn">Porosit Tani</a>
-</section>
+<img src="shkopi1.jpg" alt="Pamja e Shkopit" class="main-photo">
 
-<section class="container">
-    <h2 style="text-align:center;">Karakteristikat</h2>
+<div class="login-section">
+    <h3 style="text-align: center; margin-bottom: 15px;">LOGOHU SI ANTAR</h3>
+    <input type="text" placeholder="Emri">
+    <input type="password" placeholder="FjalÃ«kalimi">
+    <button class="btn-login">HYR</button>
+</div>
 
-    <div class="features">
-        <div class="card">
-            <h3>?? Sensor Ultrasonik</h3>
-            <p>Zbulon pengesa deri në 50cm dhe 10cm.</p>
+<div class="container">
+    <details>
+        <summary>PÃ«rshkrimi i Produktit</summary>
+        <div class="content">
+            Teknologji e avancuar ultrasonike pÃ«r njÃ« lÃ«vizje tÃ« sigurt. Ky shkop identifikon pengesat nÃ« distancÃ« dhe njofton pÃ«rdoruesin pÃ«rmes vibrimit dhe zÃ«rit.
         </div>
+    </details>
 
-        <div class="card">
-            <h3>?? Alarm Inteligjent</h3>
-            <p>Tingulli përshpejtohet sa më shumë afrohet pengesa.</p>
+    <details>
+        <summary>Ã‡mimi</summary>
+        <div class="content">
+            <div class="price-text">50 â‚¬</div>
         </div>
+    </details>
 
-        <div class="card">
-            <h3>?? Konsum i Ulët</h3>
-            <p>Punon me bateri dhe ka konsum minimal energjie.</p>
+    <img src="shkopi2.jpg" alt="PÃ«rdorimi i Shkopit" class="main-photo" style="margin: 40px 0;">
+
+    <details>
+        <summary>Kontakti dhe Porosia</summary>
+        <div class="content">
+            <div class="btn-group">
+                <a href="mailto:ecisigurt@gmail.com" class="btn btn-mail">Email</a>
+                <a href="https://wa.me/355682673885" class="btn btn-wa">WhatsApp</a>
+            </div>
         </div>
-    </div>
-
-    <div class="price">
-        49€
-    </div>
-
-</section>
-
-<section class="container" id="porosit">
-    <h2 style="text-align:center;">Porosit Tani</h2>
-
-    <form>
-        <input type="text" placeholder="Emri juaj" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Numri i telefonit" required>
-        <textarea placeholder="Adresa juaj" required></textarea>
-        <button type="submit" class="btn">Dërgo Porosinë</button>
-    </form>
-</section>
+    </details>
+</div>
 
 <footer>
-    © 2026 Shkopi Inteligjent | Të gjitha të drejtat e rezervuara
+    <div class="footer-name">LEDJAN BITRI</div>
+    <p style="margin-top: 15px;">&copy; 2026 Shkop Inteligjent Albania</p>
 </footer>
 
 </body>
