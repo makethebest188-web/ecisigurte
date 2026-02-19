@@ -3,116 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Cane Albania | Ledjan Bitri</title>
+    <title>Smart Cane Albania</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Times New Roman', Times, serif; font-weight: bold; }
+        /* RREGULLAT E PERGJITHSHME */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            background: #00050a;
-            color: #ffffff; line-height: 1.6;
+            background-color: #f0f0f0; 
+            border: 15px solid #000000; /* Korniza e zezë anësore */
+            min-height: 100vh;
         }
 
-        /* Navigimi me tre viza */
-        .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 30px; background: #000000; border-bottom: 2px solid #003366;
-            position: sticky; top: 0; z-index: 1000;
+        /* STILI I SHKRIMEVE */
+        .titull-madh { 
+            font-family: 'Times New Roman', Times, serif; 
+            font-weight: bold; 
+            color: #000000; 
+            text-transform: uppercase;
         }
 
-        .menu-icon { cursor: pointer; display: flex; flex-direction: column; gap: 5px; }
-        .menu-icon div { width: 30px; height: 4px; background-color: white; }
-
-        header { text-align: center; padding: 50px 20px; background: rgba(0,0,0,0.8); }
-        header h1 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 10px; }
-        header p { color: #3498db; font-size: 1.4rem; }
-
-        .main-photo {
-            width: 100%; max-width: 850px; display: block; margin: 20px auto;
-            border: 2px solid #ffffff; border-radius: 10px;
+        .tekst-brendshem { 
+            font-family: Arial, sans-serif; 
+            color: #001f3f; /* Blu e errët */
+            font-weight: normal;
         }
 
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-
-        /* Login Section */
-        .login-section {
-            max-width: 400px; margin: 40px auto; padding: 30px;
-            background: #001122; border: 2px solid #3498db; border-radius: 10px;
+        /* NAVIGIMI (3 VIJAT) */
+        .menu-btn {
+            position: fixed; top: 30px; left: 30px;
+            cursor: pointer; z-index: 2000;
         }
-        .login-section input {
-            width: 100%; padding: 12px; margin-bottom: 10px;
-            background: #000; border: 1px solid #fff; color: white;
+        .menu-btn div { width: 35px; height: 5px; background: #000; margin: 6px 0; transition: 0.3s; }
+
+        /* FAQET */
+        .page { display: none; padding: 60px 40px; }
+        .active-page { display: block; }
+
+        /* FAQJA 1 - BACKGROUND I ZBEHTE */
+        #faqja1 {
+            background: linear-gradient(rgba(200, 200, 200, 0.8), rgba(200, 200, 200, 0.8)), url('shkopi1.jpg');
+            background-size: cover; background-attachment: fixed;
         }
-        .btn-login { width: 100%; padding: 12px; background: #3498db; color: white; border: none; cursor: pointer; }
 
-        /* Accordion */
-        details { background: #000c1a; margin-bottom: 15px; border: 1px solid #ffffff; }
-        summary { padding: 20px; font-size: 1.4rem; cursor: pointer; display: flex; justify-content: space-between; }
-        .content { padding: 25px; font-size: 1.2rem; border-top: 1px solid #3498db; }
+        /* SEKSIONET */
+        .section { 
+            background: rgba(255, 255, 255, 0.6); 
+            margin-bottom: 30px; padding: 25px; 
+            border-left: 5px solid #000;
+        }
 
-        .price-text { font-size: 4rem; text-align: center; margin: 20px 0; color: #ffffff; }
+        .img-placeholder {
+            width: 100%; max-width: 500px; height: 300px;
+            background: #ccc; margin: 20px 0; border: 2px solid #000;
+            display: flex; align-items: center; justify-content: center;
+        }
 
-        .btn-group { display: flex; gap: 15px; margin-top: 20px; }
-        .btn { padding: 18px; text-decoration: none; flex: 1; text-align: center; border: 2px solid #ffffff; font-size: 1.2rem; }
-        .btn-mail { background: #002244; color: #fff; }
-        .btn-wa { background: #fff; color: #000; }
+        /* FAQJA 2 - STILI BLU, ZI, BARDHE */
+        #faqja2 { background-color: #001f3f; color: white; }
+        #faqja2 .tekst-brendshem { color: #ffffff; }
+        
+        .login-box {
+            max-width: 400px; margin: 20px auto; 
+            background: #000; padding: 30px; border: 2px solid #fff;
+        }
+        .login-box input { width: 100%; padding: 10px; margin: 10px 0; }
+        .login-box button { width: 100%; padding: 10px; background: #fff; color: #000; font-weight: bold; cursor: pointer; }
 
-        footer { text-align: center; padding: 60px; background: #000; border-top: 3px solid #003366; }
-        .footer-name { color: #3498db; font-size: 2.2rem; letter-spacing: 4px; }
+        .btn-link { color: #3498db; text-decoration: underline; cursor: pointer; }
+
     </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="menu-icon"><div></div><div></div><div></div></div>
-    <div style="font-size: 1.2rem; color: #3498db;">ANTARËSIMI</div>
-</nav>
+    <div class="menu-btn" onclick="togglePages()">
+        <div></div><div></div><div></div>
+    </div>
 
-<header>
-    <h1>Shkop Inteligjent</h1>
-    <p>Për personat me mungesë shikimi</p>
-</header>
+    <div id="faqja1" class="page active-page">
+        <h1 class="titull-madh" style="font-size: 2.5rem; text-align: center; margin-bottom: 40px;">
+            Shkop inteligjent per personat me aftesi te kufizuar ( Te verberit )
+        </h1>
 
-<img src="shkopi1.jpg" alt="Pamja e Shkopit" class="main-photo">
-
-<div class="login-section">
-    <h3 style="text-align: center; margin-bottom: 15px;">LOGOHU SI ANTAR</h3>
-    <input type="text" placeholder="Emri">
-    <input type="password" placeholder="Fjalëkalimi">
-    <button class="btn-login">HYR</button>
-</div>
-
-<div class="container">
-    <details>
-        <summary>Përshkrimi i Produktit</summary>
-        <div class="content">
-            Teknologji e avancuar ultrasonike për një lëvizje të sigurt. Ky shkop identifikon pengesat në distancë dhe njofton përdoruesin përmes vibrimit dhe zërit.
+        <div class="section">
+            <h2 class="titull-madh">1. Informacione rreth produktit</h2>
+            <p class="tekst-brendshem">Ky produkt eshte nje pajisje elektronike ndihmese qe perdor teknologjine e sensoreve ultrasonike per te detektuar pengesat ne rruge.</p>
+            <img src="shkopi1.jpg" alt="Foto 1" style="width:100%; max-width:400px; margin-top:10px; border:1px solid #000;">
         </div>
-    </details>
 
-    <details>
-        <summary>Çmimi</summary>
-        <div class="content">
-            <div class="price-text">50 €</div>
+        <div class="section">
+            <h2 class="titull-madh">2. Qellimi i krijimit</h2>
+            <p class="tekst-brendshem">
+                1. Rritja e pavaresise se personave qe nuk shikojne.<br>
+                2. Siguri maksimale gjate levizjes ne ambiente urbane.<br>
+                3. Reduktimi i aksidenteve dhe perplasjeve me objekte te larta.
+            </p>
         </div>
-    </details>
 
-    <img src="shkopi2.jpg" alt="Përdorimi i Shkopit" class="main-photo" style="margin: 40px 0;">
-
-    <details>
-        <summary>Kontakti dhe Porosia</summary>
-        <div class="content">
-            <div class="btn-group">
-                <a href="mailto:ecisigurt@gmail.com" class="btn btn-mail">Email</a>
-                <a href="https://wa.me/355682673885" class="btn btn-wa">WhatsApp</a>
-            </div>
+        <div class="section">
+            <h2 class="titull-madh">3. Perdorimi (Udhezuesi)</h2>
+            <p class="tekst-brendshem">Pajisja ndizet permes nje butoni ne doreze. Pasi ndizet, shkopi fillon te lshoje vibrime nese nje objekt ndodhet deri ne 2 metra larg.</p>
+            <img src="shkopi2.jpg" alt="Foto 2" style="width:100%; max-width:400px; margin-top:10px; border:1px solid #000;">
         </div>
-    </details>
-</div>
 
-<footer>
-    <div class="footer-name">LEDJAN BITRI</div>
-    <p style="margin-top: 15px;">&copy; 2026 Shkop Inteligjent Albania</p>
-</footer>
+        <div class="section">
+            <h2 class="titull-madh">4. Cmimi dhe Jetegjatesia</h2>
+            <p class="tekst-brendshem">Cmimi: 50 € <br> Bateria: Deri ne 30 ore pune aktive. Jetegjatesia e pajisjes: 5 vite+.</p>
+        </div>
 
+        <div class="section">
+            <h2 class="titull-madh">5. Porosia Online</h2>
+            <p class="tekst-brendshem">Transporti eshte <strong>FALAS</strong> brenda Tiranes. Porosia vjen ne dere per 24 ore.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="titull-madh">6. Kontakti</h2>
+            <p class="tekst-brendshem">
+                Email: <a href="mailto:ecisigurt@gmail.com" class="btn-link">ecisigurt@gmail.com</a><br>
+                WhatsApp: <a href="https://wa.me/355682673885" class="btn-link">+355 68 26 73 885</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="faqja2" class="page">
+        <h1 class="titull-madh" style="color: #fff; text-align: center;">Behu pjese e ekipit</h1>
+        
+        <div class="login-box">
+            <form action="mailto:hapiim@gmail.com" method="post" enctype="text-transform: none">
+                <input type="text" name="emri" placeholder="Emri juaj" required>
+                <input type="email" name="email" placeholder="Email juaj" required>
+                <button type="submit">LOGOHU TANI</button>
+            </form>
+        </div>
+
+        <div style="max-width: 800px; margin: 40px auto; text-align: center;">
+            <p class="tekst-brendshem" style="font-size: 1.2rem;">
+                Ky website mirembahet nga studente pa asnje perfitim financiar, ne qofte se deshironi te ndihmoni ne kete nisme lini komentin tuaj tek kordinatori:
+                <br><br>
+                <a href="sms:+355693076658?body=Pershendetje Luis, dua te kontribuoj ne nismen e shkopit inteligjent." 
+                   style="font-size: 1.5rem; color: #fff; font-weight: bold; border: 2px solid #fff; padding: 10px; display: inline-block; text-decoration: none;">
+                   LUIS SALLA (+355 69 307 6658)
+                </a>
+            </p>
+            <br>
+            <img src="shkopi3.jpg" alt="Foto 3" style="width:100%; max-width:400px; border:2px solid #fff;">
+        </div>
+    </div>
+
+    <script>
+        function togglePages() {
+            var p1 = document.getElementById('faqja1');
+            var p2 = document.getElementById('faqja2');
+            
+            if (p1.classList.contains('active-page')) {
+                p1.classList.remove('active-page');
+                p2.classList.add('active-page');
+                window.scrollTo(0,0);
+            } else {
+                p2.classList.remove('active-page');
+                p1.classList.add('active-page');
+                window.scrollTo(0,0);
+            }
+        }
+    </script>
 </body>
 </html>
